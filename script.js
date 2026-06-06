@@ -208,12 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm && formStatus) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
+            // Get form values (read before reset)
             const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
 
             // Submit Button loading state
             const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -221,7 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
 
-            // Mock API dispatch timeout
+            // We let the natural form submission happen to the iframe.
+            // Display success message and reset after a short timeout to mimic network latency.
             setTimeout(() => {
                 // Success feedback
                 formStatus.classList.remove('error');
@@ -241,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     formStatus.style.display = 'none';
                 }, 5000);
 
-            }, 1500);
+            }, 1000);
         });
     }
 

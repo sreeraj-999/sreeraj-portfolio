@@ -368,20 +368,20 @@
                     </div>
                 </div>
                 
-                <form id="contactForm" class="contact-form glass-card fade-in-up delay-100">
+                <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqbBsxTh7A7FMyLuv3njsxeI7Z7CoVoXGgRknisslv15FtgA/formResponse" method="POST" target="hidden_iframe" class="contact-form glass-card fade-in-up delay-100">
                     <div class="form-group">
                         <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <input type="text" id="name" name="entry.286628386" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="email" name="entry.2032556860" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
+                        <textarea id="message" name="entry.1344086256" class="form-control" required></textarea>
                     </div>
                     
                     <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
@@ -393,6 +393,9 @@
                         <span>Thank you! Your message has been sent successfully.</span>
                     </div>
                 </form>
+                
+                <!-- Hidden iframe to handle Google Form response without redirection -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
             </div>
         </div>
     </section>
