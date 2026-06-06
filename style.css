@@ -1204,9 +1204,21 @@ footer.footer {
         left: 0;
     }
     
+    .nav-container {
+        display: block;
+        position: relative;
+        height: 100%;
+    }
+    
     .nav-actions {
-        margin-left: auto;
-        margin-right: 16px;
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        z-index: 1001;
     }
     
     .hero-wrapper {
@@ -1275,6 +1287,10 @@ footer.footer {
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
+    }
+
+    .nav-actions {
+        right: 16px;
     }
 
     .hero-title {
