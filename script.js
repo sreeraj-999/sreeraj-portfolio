@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     // Check localStorage for preferred theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     body.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
 
