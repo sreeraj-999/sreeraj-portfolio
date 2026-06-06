@@ -72,6 +72,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height);
+    overflow-x: hidden;
 }
 
 body {
@@ -360,6 +361,7 @@ header.header.scrolled {
     border: 1px solid var(--border-color);
     background: var(--bg-card);
     transition: all var(--transition-fast);
+    flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -393,6 +395,7 @@ header.header.scrolled {
     gap: 6px;
     width: 30px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .menu-toggle span {
@@ -532,7 +535,7 @@ header.header.scrolled {
    ========================================================================== */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
 }
 
@@ -641,7 +644,7 @@ header.header.scrolled {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -1156,7 +1159,7 @@ footer.footer {
    ========================================================================== */
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     .hero-subtitle {
         font-size: 1.5rem;
@@ -1209,6 +1212,10 @@ footer.footer {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
     }
     
     .hero-tag {
@@ -1265,12 +1272,16 @@ footer.footer {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
     .hero-title {
-        font-size: 2.4rem;
+        font-size: 2.0rem;
     }
     
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .btn {
@@ -1279,6 +1290,6 @@ footer.footer {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
