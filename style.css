@@ -1228,6 +1228,14 @@ footer.footer {
         gap: 30px;
     }
     
+    .hero-content {
+        order: 2;
+    }
+    
+    .hero-visual {
+        order: 1;
+    }
+    
     .hero-title {
         font-size: 2.4rem;
     }
