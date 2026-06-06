@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // TYPING ANIMATION (HERO SECTION)
     // ==========================================================================
     const typedTextElement = document.querySelector('.typed-text');
-    const phrases = ["MCA Student", "Full-Stack Developer", "Tech Enthusiast", "MERN Stack Learner"];
+    const phrases = ["MCA Student", "Tech Enthusiast", "MERN Stack Learner"];
     let phraseIndex = 0;
     let characterIndex = 0;
     let isDeleting = false;
