@@ -1117,7 +1117,8 @@ footer.footer {
 .profile-image-container {
     position: relative;
     width: 340px;
-    height: 340px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     padding: 8px;
     background: var(--accent-gradient-1);
