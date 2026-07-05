@@ -1177,6 +1177,100 @@ footer.footer {
 }
 
 /* ==========================================================================
+   EXPERIENCE SECTION
+   ========================================================================== */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    padding: 32px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.exp-role {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    background: var(--accent-gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.exp-company {
+    color: var(--text-secondary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.05rem;
+}
+
+.exp-company i {
+    color: var(--accent-color);
+}
+
+.exp-date {
+    background: rgba(var(--accent-rgb), 0.05);
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.exp-summary {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.experience-body {
+    width: 100%;
+}
+
+.exp-points {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exp-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.exp-points li i {
+    color: var(--accent-color);
+    margin-top: 5px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
    RESPONSIVE STYLING (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -1318,6 +1412,14 @@ footer.footer {
     }
     .menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -7px);
+    }
+
+    /* Experience Mobile Overrides */
+    .experience-card {
+        padding: 24px 20px;
+    }
+    .exp-role {
+        font-size: 1.3rem;
     }
 }
 
