@@ -1252,22 +1252,36 @@ footer.footer {
 .exp-points {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .exp-points li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 12px 16px;
+    align-items: start;
 }
 
-.exp-points li i {
+.exp-point-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.exp-point-title i {
     color: var(--accent-color);
-    margin-top: 5px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    width: 16px;
+    text-align: center;
     flex-shrink: 0;
+}
+
+.exp-point-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1420,6 +1434,10 @@ footer.footer {
     }
     .exp-role {
         font-size: 1.3rem;
+    }
+    .exp-points li {
+        grid-template-columns: 1fr;
+        gap: 4px;
     }
 }
 
