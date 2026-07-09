@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=1.0.20">
+    <link rel="stylesheet" href="style.css?v=1.0.21">
 </head>
 <body data-theme="light">
 
@@ -546,23 +546,59 @@
             <button class="status-modal-close" id="closeStatusModal" aria-label="Close status popup">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="id-card-body">
-                <div class="id-card-photo-sec">
-                    <img src="profile.jpg" alt="Sreeraj E P" class="id-card-avatar">
+            <div class="id-card-container">
+                <!-- Left Section -->
+                <div class="id-card-left-sec">
+                    <div class="id-card-dot-pattern"></div>
+                    <div class="id-card-photo-wrapper">
+                        <img src="profile.jpg" alt="Sreeraj E P" class="id-card-avatar">
+                    </div>
+                    <div class="id-card-socials">
+                        <a href="https://linkedin.com/in/sreeraj-e-p-4283b2369" target="_blank" rel="noopener noreferrer" class="id-card-social-link" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/sreeraj-999" target="_blank" rel="noopener noreferrer" class="id-card-social-link" title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:sreerajep10@gmail.com" class="id-card-social-link" title="Email Me">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="id-card-info-sec">
+                
+                <!-- Right Section -->
+                <div class="id-card-right-sec">
+                    <div class="id-card-badge">
+                        <span class="badge-dot"></span> Available for Opportunities
+                    </div>
                     <h3 class="id-card-name">Sreeraj E P</h3>
+                    <div class="id-card-name-divider"></div>
                     <p class="id-card-title">Web Developer & MCA Student</p>
                     
-                    <div class="id-card-details">
-                        <div class="id-card-detail-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Kerala, India</span>
+                    <div class="id-card-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Kerala, India</span>
+                    </div>
+                    
+                    <div class="id-card-tags-divider"></div>
+                    
+                    <div class="id-card-tags">
+                        <div class="id-card-tag-item">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Web Development</span>
+                        </div>
+                        <div class="id-card-tag-item">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span>Problem Solver</span>
+                        </div>
+                        <div class="id-card-tag-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Lifelong Learner</span>
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary id-card-chat-btn" id="statusChatBtn">
-                        LET'S CHAT <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <button class="btn btn-primary id-card-connect-btn" id="statusChatBtn">
+                        <i class="fa-regular fa-paper-plane"></i> LET'S CONNECT
                     </button>
                 </div>
             </div>
