@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=1.0.16">
+    <link rel="stylesheet" href="style.css?v=1.0.17">
 </head>
 <body data-theme="light">
 
@@ -542,29 +542,30 @@
 
     <!-- Status Modal Overlay -->
     <div class="status-modal-overlay" id="statusModal">
-        <div class="status-modal-card glass-card">
+        <div class="developer-id-card glass-card">
             <button class="status-modal-close" id="closeStatusModal" aria-label="Close status popup">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="status-modal-header">
-                <div class="status-avatar-wrapper">
-                    <img src="profile.jpg" alt="Sreeraj E P" class="status-modal-avatar">
-                    <div class="status-badge">
-                        <span class="status-dot"></span> ACTIVE NOW
+            <div class="id-card-body">
+                <div class="id-card-photo-sec">
+                    <img src="profile.jpg" alt="Sreeraj E P" class="id-card-avatar">
+                </div>
+                <div class="id-card-info-sec">
+                    <h3 class="id-card-name">Sreeraj E P</h3>
+                    <p class="id-card-title">Web Developer & MCA Student</p>
+                    
+                    <div class="id-card-details">
+                        <div class="id-card-detail-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Kerala, India</span>
+                        </div>
                     </div>
-                </div>
-                <h3 class="status-modal-name">Sreeraj E P</h3>
-                <p class="status-modal-title">Web Developer & MCA Student</p>
-            </div>
-            <div class="status-modal-info">
-                <div class="status-info-row">
-                    <span class="status-info-label"><i class="fa-solid fa-location-dot" style="color: var(--accent-color);"></i> Location:</span>
-                    <span class="status-info-value">Kerala, India</span>
+                    
+                    <button class="btn btn-primary id-card-chat-btn" id="statusChatBtn">
+                        LET'S CHAT <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </button>
                 </div>
             </div>
-            <button class="btn btn-primary status-chat-btn" id="statusChatBtn">
-                LET'S CHAT
-            </button>
         </div>
     </div>
 

@@ -1559,54 +1559,61 @@ footer.footer {
     pointer-events: auto;
 }
 
-/* Status Modal Card */
-.status-modal-card {
-    width: 95%;
-    max-width: 380px;
-    padding: 40px 32px 32px 32px;
+/* ==========================================================================
+   DEVELOPER ID CARD MODAL (UNIQUE LAYOUT REPLACES MOCK AVAILABILITY MODAL)
+   ========================================================================== */
+.developer-id-card {
+    width: 90%;
+    max-width: 460px;
+    padding: 28px;
     position: relative;
-    text-align: center;
-    border-radius: 24px;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transform: translateY(30px) scale(0.95);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
-    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    
+    /* Smooth zoom-in slide entry animation */
+    opacity: 0;
+    transform: scale(0.8) translateY(-30px);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-[data-theme="light"] .status-modal-card {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+[data-theme="light"] .developer-id-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.status-modal-overlay.open .status-modal-card {
-    transform: translateY(0) scale(1);
+.status-modal-overlay.open .developer-id-card {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
 }
 
-.status-modal-card::before {
+/* Accent top border highlight */
+.developer-id-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
+    left: 28px;
+    right: 28px;
+    height: 3px;
     background: var(--accent-gradient-1);
-    border-radius: 24px 24px 0 0;
+    border-radius: 0 0 10px 10px;
 }
 
-/* Close Button */
+/* Card Close Button */
 .status-modal-close {
     position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 32px;
-    height: 32px;
+    top: 14px;
+    right: 14px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-secondary);
     display: flex;
@@ -1614,11 +1621,12 @@ footer.footer {
     justify-content: center;
     transition: all var(--transition-fast);
     cursor: pointer;
+    z-index: 10;
 }
 
 [data-theme="light"] .status-modal-close {
     background: rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .status-modal-close:hover {
@@ -1626,136 +1634,117 @@ footer.footer {
     color: #ffffff;
     border-color: transparent;
     transform: rotate(90deg) scale(1.05);
-    box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.3);
 }
 
-/* Modal Content Header */
-.status-avatar-wrapper {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 16px auto;
+/* Card Body Layout */
+.id-card-body {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 8px;
 }
 
-.status-modal-avatar {
+/* Photo Section */
+.id-card-photo-sec {
+    flex-shrink: 0;
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    padding: 3px;
+    background: var(--accent-gradient-1);
+    box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.2);
+}
+
+.id-card-avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 0 25px var(--accent-glow);
-    transition: transform 0.3s ease;
+    border-radius: 13px;
+    border: 2px solid var(--bg-secondary);
 }
 
-.status-avatar-wrapper:hover .status-modal-avatar {
-    transform: scale(1.03);
-}
-
-/* Active Badge */
-.status-badge {
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid #10b981;
-    color: #10b981;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-    letter-spacing: 0.5px;
-}
-
-[data-theme="light"] .status-badge {
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #10b981;
-    display: inline-block;
-    animation: pulse-dot 1.5s infinite;
-}
-
-@keyframes pulse-dot {
-    0% { transform: scale(0.9); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(0.9); opacity: 0.6; }
-}
-
-.status-modal-name {
-    font-family: var(--font-heading);
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-}
-
-.status-modal-title {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-}
-
-/* Modal Info Table/Rows */
-.status-modal-info {
+/* Info Section */
+.id-card-info-sec {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 0;
-    margin-bottom: 28px;
-    transition: border-color var(--transition-normal);
+    align-items: flex-start;
+    text-align: left;
 }
 
-.status-info-row {
+.id-card-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.id-card-title {
+    font-size: 0.88rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.id-card-details {
+    margin-bottom: 16px;
+}
+
+.id-card-detail-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.95rem;
-}
-
-.status-info-label {
-    color: var(--text-secondary);
-    font-weight: 500;
-    display: inline-flex;
     align-items: center;
     gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-.status-info-value {
-    font-weight: 700;
-    color: var(--text-primary);
+.id-card-detail-item i {
+    color: var(--accent-color);
 }
 
-.status-info-value.status-available {
-    color: #10b981;
-}
-
-/* Chat Button */
-.status-chat-btn {
+.id-card-chat-btn {
     width: 100%;
-    padding: 14px 28px;
-    border-radius: 50px;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.85rem;
     font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.8px;
-    box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.25);
-    transition: all var(--transition-normal);
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.2);
 }
 
-.status-chat-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.4);
+/* Mobile Responsive Adjustments */
+@media (max-width: 480px) {
+    .developer-id-card {
+        max-width: 320px;
+        padding: 24px 20px;
+    }
+    
+    .developer-id-card::before {
+        left: 20px;
+        right: 20px;
+    }
+    
+    .id-card-body {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .id-card-photo-sec {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .id-card-info-sec {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .id-card-detail-item {
+        justify-content: center;
+    }
 }
+
 
