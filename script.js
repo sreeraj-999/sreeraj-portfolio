@@ -243,6 +243,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
+    // PROFILE STATUS MODAL (AVAILABILITY POPUP)
+    // ==========================================================================
+    const profileStatusBtn = document.getElementById('profileStatusBtn');
+    const statusModal = document.getElementById('statusModal');
+    const closeStatusModal = document.getElementById('closeStatusModal');
+    const statusChatBtn = document.getElementById('statusChatBtn');
+
+    if (profileStatusBtn && statusModal && closeStatusModal) {
+        // Open Modal
+        profileStatusBtn.addEventListener('click', () => {
+            statusModal.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Disable background scroll
+        });
+
+        // Close Modal
+        const closeModalFunc = () => {
+            statusModal.classList.remove('open');
+            document.body.style.overflow = ''; // Enable background scroll
+        };
+
+        closeStatusModal.addEventListener('click', closeModalFunc);
+
+        // Close Modal when clicking outside the card
+        statusModal.addEventListener('click', (e) => {
+            if (e.target === statusModal) {
+                closeModalFunc();
+            }
+        });
+
+        // Chat Button click behavior
+        if (statusChatBtn) {
+            statusChatBtn.addEventListener('click', () => {
+                closeModalFunc();
+                
+                // Smooth scroll to contact section
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    // Focus on the name field if exists
+                    setTimeout(() => {
+                        const nameField = document.getElementById('name');
+                        if (nameField) nameField.focus();
+                    }, 800);
+                }
+            });
+        }
+    }
+
+    // ==========================================================================
     // FOOTER DYNAMIC YEAR
     // ==========================================================================
     const currentYearElement = document.getElementById('currentYear');

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=1.0.10">
+    <link rel="stylesheet" href="style.css?v=1.0.11">
 </head>
 <body data-theme="light">
 
@@ -47,6 +47,12 @@
             </nav>
             
             <div class="nav-actions">
+                <button class="profile-status-btn" id="profileStatusBtn" aria-label="View status details">
+                    <div class="profile-btn-avatar">
+                        <img src="profile.jpg" alt="Sreeraj E P">
+                        <span class="status-indicator online"></span>
+                    </div>
+                </button>
                 <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                     <i class="fa-solid fa-sun"></i>
@@ -533,6 +539,42 @@
     <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </a>
+
+    <!-- Status Modal Overlay -->
+    <div class="status-modal-overlay" id="statusModal">
+        <div class="status-modal-card glass-card">
+            <button class="status-modal-close" id="closeStatusModal" aria-label="Close status popup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="status-modal-header">
+                <div class="status-avatar-wrapper">
+                    <img src="profile.jpg" alt="Sreeraj E P" class="status-modal-avatar">
+                    <div class="status-badge">
+                        <span class="status-dot"></span> ACTIVE NOW
+                    </div>
+                </div>
+                <h3 class="status-modal-name">Sreeraj E P</h3>
+                <p class="status-modal-title">Web Developer & MCA Student</p>
+            </div>
+            <div class="status-modal-info">
+                <div class="status-info-row">
+                    <span class="status-info-label">Status:</span>
+                    <span class="status-info-value status-available">Online & Available</span>
+                </div>
+                <div class="status-info-row">
+                    <span class="status-info-label">Location:</span>
+                    <span class="status-info-value">Kerala, India</span>
+                </div>
+                <div class="status-info-row">
+                    <span class="status-info-label">Focus:</span>
+                    <span class="status-info-value">Web Application</span>
+                </div>
+            </div>
+            <button class="btn btn-primary status-chat-btn" id="statusChatBtn">
+                LET'S CHAT
+            </button>
+        </div>
+    </div>
 
     <!-- Custom Interactivity Script -->
     <script src="script.js"></script>
