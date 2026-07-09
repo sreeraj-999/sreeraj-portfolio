@@ -438,9 +438,10 @@ header.header.scrolled {
 
 .hero-wrapper {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     align-items: center;
+    max-width: 800px;
 }
 
 .hero-tag {
@@ -1490,8 +1491,20 @@ footer.footer {
     height: 38px;
     border-radius: 50%;
     border: 2px solid var(--border-color);
-    transition: border-color var(--transition-fast), transform var(--transition-fast);
+    transition: all var(--transition-fast);
     overflow: visible;
+    background: #080c14;
+    padding: 2px;
+}
+
+[data-theme="dark"] .profile-btn-avatar {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+[data-theme="light"] .profile-btn-avatar {
+    background: #080c14;
+    border-color: #080c14;
 }
 
 .profile-btn-avatar img {
@@ -1502,8 +1515,8 @@ footer.footer {
 }
 
 .profile-status-btn:hover .profile-btn-avatar {
-    border-color: var(--accent-color);
     transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .status-indicator {
