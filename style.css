@@ -1137,17 +1137,18 @@ footer.footer {
 /* Profile Image styling */
 .profile-image-container {
     position: relative;
-    width: 340px;
+    width: 320px;
+    height: 320px;
     max-width: 100%;
     aspect-ratio: 1/1;
-    border-radius: 50%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     padding: 8px;
     background: var(--accent-gradient-1);
-    box-shadow: var(--shadow-premium), 0 0 30px var(--accent-glow);
+    box-shadow: var(--shadow-premium), 0 0 40px var(--accent-glow);
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: hover-illustration 6s ease-in-out infinite;
+    animation: morph-blob 8s ease-in-out infinite, hover-illustration 6s ease-in-out infinite alternate;
     z-index: 2;
 }
 
@@ -1155,25 +1156,43 @@ footer.footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: inherit;
     border: 4px solid var(--bg-secondary);
+    transition: transform var(--transition-normal);
+}
+
+.profile-image-container:hover .profile-img {
+    transform: scale(1.05);
 }
 
 .profile-glow-ring {
     position: absolute;
-    top: -6px;
-    left: -6px;
-    right: -6px;
-    bottom: -6px;
-    border-radius: 50%;
-    border: 2px dashed rgba(var(--accent-rgb), 0.35);
-    animation: rotate-ring 40s linear infinite;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border-radius: inherit;
+    border: 2.5px dashed var(--accent-color);
+    animation: rotate-ring 30s linear infinite;
     pointer-events: none;
+    opacity: 0.85;
 }
 
 @keyframes rotate-ring {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+@keyframes morph-blob {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
 
 /* ==========================================================================
