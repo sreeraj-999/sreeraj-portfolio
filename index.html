@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=1.0.22">
+    <link rel="stylesheet" href="style.css?v=1.0.23">
 </head>
 <body data-theme="light">
 
@@ -54,8 +54,27 @@
                     </div>
                 </button>
                 <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
-                    <i class="fa-solid fa-lightbulb bulb-on"></i>
-                    <i class="fa-regular fa-lightbulb bulb-off"></i>
+                    <svg class="hanging-bulb-svg" viewBox="0 0 40 80" width="30" height="60" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Wire -->
+                        <line x1="20" y1="0" x2="20" y2="28" stroke="#475569" stroke-width="2" />
+                        <!-- Socket Collar -->
+                        <rect x="16" y="28" width="8" height="6" rx="1" fill="#38bdf8" />
+                        <rect x="17" y="34" width="6" height="3" fill="#1e293b" />
+                        <!-- Radiating Rays -->
+                        <g class="bulb-rays">
+                            <line x1="10" y1="62" x2="6" y2="67" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+                            <line x1="16" y1="67" x2="14" y2="74" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+                            <line x1="24" y1="67" x2="26" y2="74" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+                            <line x1="30" y1="62" x2="34" y2="67" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+                            <line x1="20" y1="69" x2="20" y2="77" stroke="#eab308" stroke-width="2" stroke-linecap="round" />
+                        </g>
+                        <!-- Bulb Glass -->
+                        <path class="bulb-glass" d="M14 37 C14 37, 10 43, 10 49 C10 56, 14.5 61, 20 61 C25.5 61, 30 56, 30 49 C30 43, 26 37, 26 37 Z" fill="#e2e8f0" stroke="#475569" stroke-width="1.5" />
+                        <!-- Filament -->
+                        <path class="bulb-filament" d="M18 48 Q20 44 20 44 Q20 44 22 48" fill="none" stroke="#475569" stroke-width="1" />
+                        <line x1="18" y1="48" x2="17" y2="37" stroke="#475569" stroke-width="1" />
+                        <line x1="22" y1="48" x2="23" y2="37" stroke="#475569" stroke-width="1" />
+                    </svg>
                 </button>
                 <button class="menu-toggle" id="mobileMenuBtn" aria-label="Open navigation menu">
                     <span></span>

@@ -45,17 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateThemeIcon(theme) {
-        if (!themeToggleBtn) return;
-        const bulbOnIcon = themeToggleBtn.querySelector('.bulb-on');
-        const bulbOffIcon = themeToggleBtn.querySelector('.bulb-off');
-        
-        if (theme === 'light') {
-            if (bulbOffIcon) bulbOffIcon.style.display = 'none';
-            if (bulbOnIcon) bulbOnIcon.style.display = 'block';
-        } else {
-            if (bulbOffIcon) bulbOffIcon.style.display = 'block';
-            if (bulbOnIcon) bulbOnIcon.style.display = 'none';
-        }
+        // Theme icon visual state is handled cleanly via CSS [data-theme="light"] overrides on SVG paths.
     }
 
     // ==========================================================================
