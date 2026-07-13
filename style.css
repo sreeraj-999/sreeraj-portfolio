@@ -365,6 +365,13 @@ header.header.scrolled {
     width: 100%;
 }
 
+/* Navigation container right alignment wrapper */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -391,11 +398,22 @@ header.header.scrolled {
     margin-right: -5px; /* Adjust spacing for elements on the right */
 }
 
-/* Swing animation on hover */
+/* Swing animation on hover/touch */
 .theme-toggle:hover {
     border: none;
     box-shadow: none;
-    transform: rotate(10deg);
+    animation: swing-bulb 1.5s ease-in-out;
+}
+
+@keyframes swing-bulb {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(12deg); }
+    30% { transform: rotate(-9deg); }
+    45% { transform: rotate(6deg); }
+    60% { transform: rotate(-4deg); }
+    75% { transform: rotate(2deg); }
+    90% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
 }
 
 .theme-toggle:active {
@@ -1393,6 +1411,21 @@ footer.footer {
         align-items: center;
         gap: 16px;
         z-index: 1001;
+    }
+    
+    .theme-toggle {
+        position: absolute;
+        right: 24px;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -12px;
+    }
+    
+    .theme-toggle:hover {
+        animation: swing-bulb 1.5s ease-in-out;
     }
     
     .hero-wrapper {

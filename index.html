@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=1.0.24">
+    <link rel="stylesheet" href="style.css?v=1.0.25">
 </head>
 <body data-theme="light">
 
@@ -46,13 +46,20 @@
                 </ul>
             </nav>
             
-            <div class="nav-actions">
-                <button class="profile-status-btn" id="profileStatusBtn" aria-label="View status details">
-                    <div class="profile-btn-avatar">
-                        <img src="profile.jpg" alt="Sreeraj E P">
-                        <span class="status-indicator online"></span>
-                    </div>
-                </button>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button class="profile-status-btn" id="profileStatusBtn" aria-label="View status details">
+                        <div class="profile-btn-avatar">
+                            <img src="profile.jpg" alt="Sreeraj E P">
+                            <span class="status-indicator online"></span>
+                        </div>
+                    </button>
+                    <button class="menu-toggle" id="mobileMenuBtn" aria-label="Open navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
                 <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
                     <svg class="hanging-bulb-svg" viewBox="0 0 40 80" width="30" height="60" xmlns="http://www.w3.org/2000/svg">
                         <!-- Wire -->
@@ -75,11 +82,6 @@
                         <line x1="18" y1="48" x2="17" y2="37" stroke="#475569" stroke-width="1" />
                         <line x1="22" y1="48" x2="23" y2="37" stroke="#475569" stroke-width="1" />
                     </svg>
-                </button>
-                <button class="menu-toggle" id="mobileMenuBtn" aria-label="Open navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
                 </button>
             </div>
         </div>
