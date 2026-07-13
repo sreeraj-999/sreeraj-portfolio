@@ -387,6 +387,8 @@ header.header.scrolled {
     transition: transform 0.5s cubic-bezier(0.25, 1.25, 0.5, 1.25);
     flex-shrink: 0;
     margin-top: -12px; /* Pull up to align wire to header top */
+    margin-left: 15px; /* Shift a little bit right */
+    margin-right: -5px; /* Adjust spacing for elements on the right */
 }
 
 /* Swing animation on hover */
