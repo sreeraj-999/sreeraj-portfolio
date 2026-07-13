@@ -46,15 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateThemeIcon(theme) {
         if (!themeToggleBtn) return;
-        const moonIcon = themeToggleBtn.querySelector('.fa-moon');
-        const sunIcon = themeToggleBtn.querySelector('.fa-sun');
+        const bulbOnIcon = themeToggleBtn.querySelector('.bulb-on');
+        const bulbOffIcon = themeToggleBtn.querySelector('.bulb-off');
         
         if (theme === 'light') {
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'block';
+            if (bulbOffIcon) bulbOffIcon.style.display = 'none';
+            if (bulbOnIcon) bulbOnIcon.style.display = 'block';
         } else {
-            moonIcon.style.display = 'block';
-            sunIcon.style.display = 'none';
+            if (bulbOffIcon) bulbOffIcon.style.display = 'block';
+            if (bulbOnIcon) bulbOnIcon.style.display = 'none';
         }
     }
 
